@@ -47,5 +47,10 @@ string(defaultValue: '', description: 'accept the string', name: 'git_url', trim
               sh 'mvn clean install'
             }
         }
+        stage('Starting downstream job ') {
+            steps{
+               build job: 'social_login'
+            }
+        }
     }
 }
