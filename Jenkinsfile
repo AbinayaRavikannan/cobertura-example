@@ -30,6 +30,7 @@ string(defaultValue: '', description: 'accept the string', name: 'git_url', trim
         stage(qa){
             steps{
                 echo 'checking the code quality'
+                sh 'mvn sonar:sonar'
             }
         }
         stage(publish){
