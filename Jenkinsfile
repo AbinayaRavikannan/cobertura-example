@@ -30,8 +30,8 @@ string(defaultValue: '', description: 'accept the string', name: 'git_url', trim
         stage(qa){
             steps{
                 echo 'checking the code quality'
-               // tool name: 'sonar_scanner', type: 'sonarqube scanner'
-                sh 'mvn sonar:sonar'
+                tool name: 'sonar_scanner', type: 'sonarqube scanner'
+                sh 'mvn clean package sonar:sonar'
             }
         }
         stage(publish){
