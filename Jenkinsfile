@@ -31,7 +31,7 @@ string(defaultValue: '', description: 'accept the string', name: 'git_url', trim
             steps{
                 echo 'checking the code quality'
                 tool name: 'sonar_scanner', type: 'sonarqube scanner'
-                sh 'mvn clean package sonar:sonar'
+                sh 'mvn sonar:sonar'
             }
         }
         stage(publish){
